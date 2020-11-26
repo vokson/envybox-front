@@ -24,7 +24,7 @@ const router = new VueRouter({
 })
 
 window.$axios = axios.create({
-  baseURL: "http://envybox.backend/api"
+  baseURL: "http://localhost:8080/api"
 });
 
 export default router
