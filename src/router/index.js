@@ -24,7 +24,7 @@ const router = new VueRouter({
 })
 
 window.$axios = axios.create({
-  baseURL: "http://localhost:8080/api"
+  baseURL: "http://46.148.228.179:8080/api"
 });
 
 export default router
