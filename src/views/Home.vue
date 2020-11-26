@@ -35,13 +35,13 @@
         </div>
 
         <b-form-group
-          id="input-group-text"
+          id="input-group-message"
           label="Обращение:"
-          label-for="input-text"
+          label-for="input-message"
         >
           <b-form-textarea
-            id="input-text"
-            v-model="form.text"
+            id="input-message"
+            v-model="form.message"
             placeholder="Введите что-нибудь..."
             rows="3"
             max-rows="6"
@@ -49,7 +49,7 @@
         </b-form-group>
 
         <div v-if="errors">
-            <div v-for="(item, index) in errors.text" v-bind:key="index" class="alert alert-danger">{{ item }}</div>
+            <div v-for="(item, index) in errors.message" v-bind:key="index" class="alert alert-danger">{{ item }}</div>
         </div>
 
         <b-button type="submit" variant="primary" class="button"
@@ -82,11 +82,10 @@ export default {
       form: {
         name: "",
         phone: "",
-        text: "",
+        message: "",
       },
       errors: null,
-      on_progress: false,
-      // status: null,
+      on_progress: false
     };
   },
   methods: {
@@ -122,7 +121,7 @@ export default {
 
     onReset(evt) {
       evt.preventDefault();
-      this.form.text = "";
+      this.form.message = "";
       this.form.name = "";
       this.form.phone = "";
     },
