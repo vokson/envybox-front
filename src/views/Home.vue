@@ -66,7 +66,7 @@
           <div class="alert alert-danger">Ошибка выполнения запроса</div>
       </div>
 
-      <div v-else>
+      <div v-if="success">
         <div class="alert alert-success">Данные успешно отправлены.</div>
       </div>
     </div>
@@ -84,6 +84,7 @@ export default {
         phone: "",
         message: "",
       },
+      success: false,
       errors: null,
       on_progress: false
     };
@@ -96,6 +97,7 @@ export default {
 
       let successFunction = function () {
         this.errors = null
+        this.showSuccess()
       };
 
       let errorFunction = function (error) {
@@ -125,6 +127,11 @@ export default {
       this.form.name = "";
       this.form.phone = "";
     },
+
+    showSuccess() {
+      this.success = true
+      setTimeout(() => { this.success = false; }, 3000);      
+    }
   },
 };
 </script>
